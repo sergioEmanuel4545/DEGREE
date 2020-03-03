@@ -49,3 +49,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 // serve is listening
 app.listen(app.get('port'));
  console.log('Server on port', app.get('port'));
+
+ console.log("yeah motherfucker erase this");
