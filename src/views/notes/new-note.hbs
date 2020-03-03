@@ -1,0 +1,38 @@
+<!--.col-md-4.mx-auto en una columna de 4 con md y centreado con mx-auto-->
+<!--para que no ocupe todo el ancho,class="card", lo colocamos dentro de una columna-->
+<div class="col-md-4 mx-auto">
+<div class="card">
+    <div class="card_header">
+        <h3>Nueva Nota</h3>
+    </div>
+    <div class="card_body">
+        <form action ="/notes/new-notes" method="POST">
+            <div class="form-group">
+                <input type = "text" name="title" class="form-control" placeholder="Title"
+                autofocus>
+<!--creamos el formulario (entrada dedatos con la etiqueta form, dentro del action cuando un usuario inserte los datos, aqui es donde voy a mandar la direccion de internet-->                
+<!--diseñamos los imput para el usuario, para que todos los inputs esten medios separados lo colacamos dentro de un form group-->
+<!--cada input tendra un placeholder, cada input tiene que tener una propiedad llamada name, name="" es la manera en que el servidor lo va a recibir, lo que el usuario ha escrito-->
+<!--el cursor ya se encuentra parpadeando dentro del input donde coloquemos el autofocus-->
+            </div>
+            <div class="form-group">
+                <textarea name="description" class="form-control"
+                placeholder="Description"></textarea>
+            </div>
+<!--creamos un text area dentro de un div(clase) form-group que sirve para escribir la descripcion-->
+<!--utilizamos la clase form control para que se adecue al tamaño de pantalla-->
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">
+                    save
+                </button>
+            </div>
+<!--creamos un botom que tendra distintas clases:btn,  btn-primary(color azul),  btn-block(para que ocupe todo el ancho disponible)-->            
+<!--dentro colocamos un texto que diga guardar y le indicamos que este boton es de tipo submit par que cuando le den un click, ejecute el evento del formulario, que envia una peticion al servidor-->
+ 
+        </form>
+    </div>
+</div>
+</div>
+
+
+

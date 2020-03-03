@@ -1,0 +1,31 @@
+<!--ARCHIVOS(enves de solo rutas con mensajes) NECESARIOS PARA ENVIAR AL FRONT END, configuraciones de vistas  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>este es el archivo main</title>
+    <!-- BOOTSTRAP 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+    <!-- CUSTOM CSS -->
+    <!--la carpeta public solo es conocida por el servidor por lo que no se necesita referenciarla,poreso tiene ese comportamiento tan raro en la rutas en columna izquiera del editor-->
+    <!--con:app.use(express.static(path.join(__dirname, 'public'))); decimos que todo lo que este dentro de la carpeta public es publico todo pueden acceder a elaa, pero no la carpeta con el nombre en si-->
+    <link rel ="stylesheet" href="/css/main.css">
+</head>
+<body>
+    
+    <p>Navigation</p>
+    <!--etiqueta main que define el contenidop central de la aplicacion -->
+    <main class="container"<!--clase de bootstrap para central el contenido de los lados y aparezca como un recuadro cortado--->  >
+     {{{ body }}}
+    </main>
+  
+    <p>Footer</p>
+</body>
+</html>
+
+
+
+
+
