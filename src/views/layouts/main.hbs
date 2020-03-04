@@ -1,4 +1,5 @@
 <!--ARCHIVOS(enves de solo rutas con mensajes) NECESARIOS PARA ENVIAR AL FRONT END, configuraciones de vistas  -->
+<!-- en esta pagina leemos a main.css-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,7 @@
     <!--la carpeta public solo es conocida por el servidor por lo que no se necesita referenciarla,poreso tiene ese comportamiento tan raro en la rutas en columna izquiera del editor-->
     <!--con:app.use(express.static(path.join(__dirname, 'public'))); decimos que todo lo que este dentro de la carpeta public es publico todo pueden acceder a elaa, pero no la carpeta con el nombre en si-->
     <link rel ="stylesheet" href="/css/main.css">
+    <!-- sabesmos que css/main.css esta dentro de la carpeta public,y declaramos la carpeta public como publico entonces puede acceder a todo lo que est dentro pero no puedo llamar al nombre de la carpeta ensi -->
 </head>
 <body>
     
