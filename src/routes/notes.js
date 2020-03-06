@@ -2,13 +2,16 @@
 const express = require('express');
 const router = express.Router();
 
+
+//requerimos el modelos de datos de MONGODB para poder guardar un dato en la BD
+const Note = require('../models/Note');
+//aqui para poder ingresar a la carpeta se tiene que subir un nivel('../)
+
 //crear una ruta que le permita al usu ver un formulario
 router.get('/notes/add', (req,res) =>{
     res.render('notes/new-note') //tenemos que crear un formulario(vista) en notes
-})
-router.get('/notes', (req,res) =>{
-    res.send('Notes from database');
-})
+});
+
 
 //toda este procedimiento es par guardar los datos que el usuario me envia a la base de datos
 //creamos una ruta especifica para recibir datos, que envia un formulario
@@ -32,13 +35,16 @@ router.post('/notes/new-notes', (req, res) => {
             description});
     }
     else{
-        res.send('ok');//response para ver algo y no se quede procesando
-    }
-    console.log(req.body);//req=request body es una propiead de la misma funcion para que reciba los datos, cuadno hagamos click en enviar asdicion
-    
+        //res.send('ok');//response para ver algo y no se quede procesando y mandamos un ok como simulando que se inserto algun dato en la base de datos
+        new newNote({ title, description });
+        //await newNote.save();
+        res.redirect('/notes');
+    }    //req=request body es una propiead de la misma funcion para que reciba los datos, cuadno hagamos click en enviar asdicion
     });
-    
-
+ 
+    router.get('/notes', (req,res) =>{
+        res.send('Notes from database');
+    });
 module.exports = router;
 
 
