@@ -1,7 +1,7 @@
 // urls pra que el usuario puedar crear o midificasr una nueva nota
 const express = require('express');
 const router = express.Router();
-
+const newNote = 0;
 
 //requerimos el modelos de datos de MONGODB para poder guardar un dato en la BD
 const Note = require('../models/Note');
@@ -16,7 +16,7 @@ router.get('/notes/add', (req,res) =>{
 //toda este procedimiento es par guardar los datos que el usuario me envia a la base de datos
 //creamos una ruta especifica para recibir datos, que envia un formulario
 //peticion tipo POST voya recibirlo a una ruta especifica , el post tiene que estar indicado como un metodo en donde envie el formulario
-router.post('/notes/new-notes', (req, res) => {
+router.post('/notes/new-notes', async (req, res) => {
     //observamos que es un objeto deJS xq tiene llaves y adentro tiene propiedades, cada uno de los datos que envia el usuario es una propiedad
     //DESCTRUCTURING, poder sacar cada propiedad por separado en una constante o variable a partir de un objeto
     const {title, description}= req.body;//quiero destructurar el title y el descrption, puden estar almacenados dentro una variable o constante, en este caso sera constante 
@@ -36,15 +36,19 @@ router.post('/notes/new-notes', (req, res) => {
     }
     else{
         //res.send('ok');//response para ver algo y no se quede procesando y mandamos un ok como simulando que se inserto algun dato en la base de datos
-        new newNote({ title, description });
-        //await newNote.save();
-        res.redirect('/notes');
+        const newNote =  new Note({ title, description });//aqui instanciamos la clase y le pasamos los datos, se crea nuevos datos para gurardar en mongo db
+        await newNote.save(); //para REALMENTE guardar en DB tenemos qy ejeutar un metodo llamdo save
+        //guardar en DB es un proceso asincrono, puesto que no sabemos cuento tiempo puede tardar hasta que termine el proceso de guardado, por lo que tenemos que declararlo en NODE.JS como AWAIT y en el metodo colocar "async" para que habilite la opcion de poner "await"
+        //await= todo lo que esta debajo de await, se indica que espere para que termine la line adel await  
+        res.redirect('/notes');//despues que acabae el proceso de await voy a redireccionar a una vista, dandole una ruta
     }    //req=request body es una propiead de la misma funcion para que reciba los datos, cuadno hagamos click en enviar asdicion
     });
  
-    router.get('/notes', (req,res) =>{
-        res.send('Notes from database');
-    });
+    router.get('/notes', async (req,res) =>{ //aqui se crea la vista y el procedimiento a seguir
+    const notes = await Note.find()//jalamos los datos de la DB, dentro de find no le especificamos nada xq queremos que nos dvuelva todo, como no sabemos(igual que el guardado cuento pude tardar, entonces lo declaramos como asyncrono)
+    //y lo almacenamos en una constante
+    res.render('notes/all-notes', {notes});
+});
 module.exports = router;
 
 
