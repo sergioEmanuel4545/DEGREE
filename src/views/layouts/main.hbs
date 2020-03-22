@@ -11,6 +11,8 @@
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
     crossorigin="anonymous">
+     <!-- FONT AWESOME -->
+      <script src="https://kit.fontawesome.com/5f1b849f36.js" crossorigin="anonymous"></script>
     <!-- CUSTOM CSS -->
     <!--la carpeta public solo es conocida por el servidor por lo que no se necesita referenciarla,poreso tiene ese comportamiento tan raro en la rutas en columna izquiera del editor-->
     <!--con:app.use(express.static(path.join(__dirname, 'public'))); decimos que todo lo que este dentro de la carpeta public es publico todo pueden acceder a elaa, pero no la carpeta con el nombre en si-->
@@ -21,7 +23,8 @@
     
     <p>Navigation</p>
     <!--etiqueta main que define el contenidop central de la aplicacion -->
-    <main class="container"<!--clase de bootstrap para central el contenido de los lados y aparezca como un recuadro cortado--->  >
+    <main class="container"
+    <!--clase de bootstrap para central el contenido de los lados y aparezca como un recuadro cortado--->  >
      {{{ body }}}
     </main>
   

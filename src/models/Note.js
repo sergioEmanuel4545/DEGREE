@@ -1,13 +1,16 @@
 //utilizamos mongoose ya que sirve para CREAR SCHEMAS DE DATOS
 const mongoose = require('mongoose');
-const { Schema }= mongoose; // de mongoose solo nos importa el esquema y lo guardamos en una constante
+const { Schema }= mongoose; 
+// de mongoose solo nos importa el esquema y lo guardamos en una constante
 
 
 //describimos que propiedades van atener
 const NoteSchema = new Schema({
-    title: {type: String, required: true},//TRUE no puede estar vacio
+    title: {type: String, required: true},
+    //TRUE no puede estar vacio
     description: { type: String, required: true},
-    date: {type: Date, default: Date.now}//propiedad por defecto, si no le pasamos ningun dato pondra un valor por defecto 
+    date: {type: Date, default: Date.now}
+    //propiedad por defecto, si no le pasamos ningun dato pondra un valor por defecto 
 })
 
 //hay que decir a mongo db como crear el modelo
