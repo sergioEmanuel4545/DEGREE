@@ -11,7 +11,8 @@ require('./database');
 
 // Settings
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views')); //pone el correcto formato de las direcciones de las carpetas
+app.set('views', path.join(__dirname, 'views')); 
+//pone el correcto formato de las direcciones de las carpetas
 //
 app.engine('.hbs',exphbs({
     defaultLayout:'main',

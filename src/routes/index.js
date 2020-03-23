@@ -12,7 +12,8 @@ router.get('/', (req, res) => {
 res.render('index');})
 router.get('/about', (req, res) => {
     //res.send('about');
-    res.render('about');//si el usu entra a about, renderizale o mandale el archivo about.hbs
+    res.render('about');
+    //si el usu entra a about, renderizale o mandale el archivo about.hbs
 })
 
 

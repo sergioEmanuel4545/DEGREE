@@ -1,0 +1,42 @@
+[33mcommit cb5931fa9b8ca31b798d33019bc1720f4e4cdc59[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Sergio Emanuel <ser610.goy@gmail.com>
+Date:   Sun Mar 22 15:25:33 2020 -0400
+
+    commit dentro de mi ASUSTOWER para ver si funciona el pull
+
+[33mcommit 5e9f0ad219132ab19a82c6b224a351a28e7a1e6c[m
+Merge: b687369 63bf1ca
+Author: Sergio Emanuel <ser610.goy@gmail.com>
+Date:   Thu Mar 12 01:02:44 2020 -0400
+
+    Merge branch 'master' of https://github.com/sergioEmanuel4545/DEGREE
+
+[33mcommit b68736973bc0d8173f8302e98431f6efd57d3f0b[m
+Author: Sergio Emanuel <ser610.goy@gmail.com>
+Date:   Mon Mar 9 07:50:47 2020 -0400
+
+    9/3/2020 falla en la vista al mostrar las card
+
+[33mcommit e7c00b778695f894be64e53d3f129a671697c85c[m
+Author: Sergio Emanuel <ser610.goy@gmail.com>
+Date:   Fri Mar 6 01:30:51 2020 -0400
+
+    avance hasta la agragacion de datos al mongoBD 5/03/2020
+
+[33mcommit b13107dbf347875473897f9eeaebcaed7a3c7cf5[m
+Author: Sergio Emanuel <ser610.goy@gmail.com>
+Date:   Wed Mar 4 08:17:40 2020 -0400
+
+    hasta alerts 4march
+
+[33mcommit 63bf1ca88d4a1c4e778ec300994713cd236e00a4[m
+Author: Sergio Emanuel <ser610.goy@gmail.com>
+Date:   Tue Mar 3 07:49:34 2020 -0400
+
+    prueba de console log git tutorial
+
+[33mcommit a91d6df08558e5a33b3ee659b3521c182a7fcdf0[m
+Author: Sergio Emanuel <ser610.goy@gmail.com>
+Date:   Tue Mar 3 07:45:21 2020 -0400
+
+    agregada 3/3/2020

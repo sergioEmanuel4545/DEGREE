@@ -1,7 +1,9 @@
 <!--realizamos una validades ya que estamos renderizando la vista nuevamente para mostrar los errores que el usu introdujo -->
 <!-- utilizamos sintazxis de handlebars que es la doble llave por que estamos recibiendo datos-->
-{{#each errors}}<!--each sirve para recorrer el arreglo de errores si existiera un error-->
-<div class="alert alert-danger alert-dismissible fade show" role="alert"><!--warning=amarillo danger=rojo-->
+{{#each errors}}
+<!--each sirve para recorrer el arreglo de errores si existiera un error-->
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <!--warning=amarillo danger=rojo-->
   {{text}}
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
