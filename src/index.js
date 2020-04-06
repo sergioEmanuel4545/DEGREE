@@ -3,6 +3,7 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const flash = require('connect-flash');
 // initialiazations
 const app= express();
 
@@ -25,16 +26,21 @@ app.set('view engine', '.hbs');
 
 //Middlewares      configuramos los modulos previamente instalados
 app.use(express.urlencoded({extended: false}));
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
 app.use(session({  //configuraciones basicas de modulo sessions
     secret:'mysecretapp',
     resave: true,
     saveUninitialized: true,
-}))
-
+}));
+app.use(flash());
 
 //global varialbes
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
 
+    next();
+})   
 
 // routes
 app.use(require('./routes/index'));

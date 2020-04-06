@@ -48,6 +48,7 @@ router.post('/notes/new-notes', async (req, res) => {
         const newNote =  new Note({ title, description });
         //aqui instanciamos la clase y le pasamos los datos, se crea nuevos datos para gurardar en mongo db
         await newNote.save(); 
+        req.flash('success_msg', 'Note added successfully');
         //para REALMENTE guardar en DB tenemos qy ejeutar un metodo llamdo save
         //guardar en DB es un proceso asincrono, puesto que no sabemos cuento tiempo puede tardar hasta que termine el proceso de guardado, por lo que tenemos que declararlo en NODE.JS como AWAIT y en el metodo colocar "async" para que habilite la opcion de poner "await"
         //await= todo lo que esta debajo de await, se indica que espere para que termine la line adel await  
@@ -69,5 +70,18 @@ router.get('/notes/edit/:id', async (req,res) =>{
     const note = await Note.findById(req.params.id);
     res.render('notes/edit-note', {note});
 });
+
+router.put('/notes/edit-note/:id', async (req, res) => {
+ const {title, description} = req.body;
+ await Note.findByIdAndUpdate(req.params.id, {title, description});
+ req.flash('success_msg', 'Note updated successfully');
+ res.redirect('/notes');
+});
+
+router.delete('/notes/delete/:id', async (req, res) =>{
+ await Note.findByIdAndDelete(req.params.id);
+ req.flash('error_msg', 'Note deleted successfully');
+ res.redirect('/notes');
+})
 module.exports = router;
 
