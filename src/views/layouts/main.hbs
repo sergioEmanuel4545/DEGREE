@@ -21,9 +21,10 @@
 </head>
 <body>
     
-    <p>Navigation</p>
+    {{> navigation }}
+   
     <!--etiqueta main que define el contenidop central de la aplicacion -->
-    <main class="container">
+    <main class="container p-4">
         {{> messages}}
         {{> errors}}
         <!--errors el codigo partials para que se ejecute en la parte que necesitemos---> 

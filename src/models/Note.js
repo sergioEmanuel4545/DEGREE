@@ -9,8 +9,9 @@ const NoteSchema = new Schema({
     title: {type: String, required: true},
     //TRUE no puede estar vacio
     description: { type: String, required: true},
-    date: {type: Date, default: Date.now}
+    date: {type: Date, default: Date.now},
     //propiedad por defecto, si no le pasamos ningun dato pondra un valor por defecto 
+    user: {type: String}
 })
 
 //hay que decir a mongo db como crear el modelo

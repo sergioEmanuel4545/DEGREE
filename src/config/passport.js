@@ -12,7 +12,7 @@ passport.use(new LocalStrategy ({
         return done (null, false, {message: "Not User found"});
     }
     else{
-        const match = await User.matchPassword(pasword);
+        const match = await user.matchPassword(password);
         if(match){
             return done(null, user);
         } else{
@@ -20,3 +20,13 @@ passport.use(new LocalStrategy ({
         }
     }
 }));
+
+passport.serializeUser((user, done) => {
+    done (null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+    User.findById(id, (err, user) => {
+        done(err, user);
+    })
+});
